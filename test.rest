@@ -1,0 +1,59 @@
+# API for GET ALL
+GET http://172.18.207.197:8080/flows
+####
+
+# API for GET specific flow
+GET http://172.18.207.197:8080/flows/SMS1
+####
+
+# API for Create new Flow
+POST http://172.18.207.197:8080/flows
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MDg2NDM0MTgsImV4cCI6MTYwODY0MzQ2M30.-GH3wS0urs8O5Q-iG7I4YOo--OfpEXJukL91KaahSlw
+Content-Type: application/json
+
+{
+    "flow" : "SMS2",
+    "files": "1234.txt"    
+}
+###
+
+# API for Update exsisting Flow
+PUT http://172.18.207.197:8080/flows/SMS1
+Content-Type: application/json
+
+{
+    "flow": "SMS1",
+    "files": "123456.txt"    
+}
+
+###
+
+# API for DELETE Flow
+DELETE http://172.18.207.197:8080/flows/SMS2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2MDg2NDM0MTgsImV4cCI6MTYwODY0MzQ2M30.-GH3wS0urs8O5Q-iG7I4YOo--OfpEXJukL91KaahSlw
+
+###
+
+POST http://172.18.207.197:8080/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "password"
+}
+
+###
+POST http://172.18.207.197:8080/token
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3VtZXNoIiwiaWF0IjoxNjA4NTQyNjEwfQ.dj9uW1SATzIXJ3XzgeX2LRIwlZaaX5zP7CGomKofBm8"
+}
+
+###
+DELETE http://172.18.207.197:8080/logout
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3VtZXNoIiwiaWF0IjoxNjA4NTQyNjEwfQ.dj9uW1SATzIXJ3XzgeX2LRIwlZaaX5zP7CGomKofBm8"
+}
